@@ -223,7 +223,7 @@ export default function Gallery() {
                 alt={getName(item)}
                 loading="lazy"
               />
-
+{/* 
               <span className="gallery-item-overlay">
                 <span className="gallery-item-name">
                   {getName(item)}
@@ -233,7 +233,7 @@ export default function Gallery() {
                   View Details
                   <i className="bi bi-arrow-up-right" />
                 </span>
-              </span>
+              </span> */}
             </button>
           ))}
         </div>
