@@ -259,7 +259,7 @@ export default function Navbar() {
         {/* LEFT: CUSTOMIZED SAREES WHATSAPP */}
         <div className="navbar-whatsapp-section">
           <a
-            href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20am%20interested%20in%20customized%20sarees."
+            href="https://wa.me/917075502380?text=Hi%2C%20I%20am%20interested%20in%20customized%20sarees."
             target="_blank"
             rel="noopener noreferrer"
             className="custom-saree-btn"

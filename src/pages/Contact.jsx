@@ -61,13 +61,13 @@ const stitchingOptions = [
   Replace these sample details with your real business information.
 */
 const contactDetails = {
-  address: "Add your shop address here, Hyderabad, Telangana, India",
-  phone: "+91 XXXXX XXXXX",
-  email: "your-email@example.com",
+  address: "HOUSE NO 202 2ND FLOOR MADHU RESIDENCY, PATRIKA NAGAR, OPP MEDICOVER HOSPITAL, HITECH, Hyderabad, Telangana, India",
+  phone: "+91 7075502380",
+  email: " info@jabitaschoice.com",
   hours: "Monday – Saturday",
   timings: "10:00 AM – 8:00 PM",
-  mapQuery: "YOUR SHOP ADDRESS, HYDERABAD, TELANGANA, INDIA",
-  whatsappNumber: "91XXXXXXXXXX",
+  mapQuery: "PATRIKA NAGAR, OPP MEDICOVER HOSPITAL, HITECH",
+  whatsappNumber: "917075502380",
 };
 
 const initialForm = {

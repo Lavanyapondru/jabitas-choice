@@ -173,6 +173,8 @@ export default function AdminDashboard() {
     stock: Math.max(0, Number(uploadForm.stock) || 0),
     image: uploadForm.image.trim(),
     isActive: true,
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
   };
 
   addProduct(newProduct);

@@ -436,7 +436,7 @@ a
 .story-strip img
 {
   width:100%;
-  height:670px;
+  height:780px;
   object-fit:cover;
   border-radius:25px
 }
@@ -3489,8 +3489,8 @@ HERO — ASYMMETRIC EDITORIAL LAYOUT
 }
 .about-page .about-btn-primary
 {
-  color: white;
-  background: var(--wine);
+  color: rgb(15, 15, 15);
+  background: var(--accent-yellow);
   box-shadow: 0 8px 18px rgba(112, 39, 70, 0.12);
 }
 .about-page .about-btn-primary:hover
@@ -4503,13 +4503,13 @@ EXPERIENCE + REVIEW SLIDER
 }
 .about-page .about-btn-dark
 {
-  color: white;
-  background: var(--wine-dark);
+  color: rgb(17, 17, 17);
+  background: var(--accent-yellow);
 }
 .about-page .about-btn-dark:hover
 {
   color: white;
-  background: var(--wine);
+  background: black;
   transform: translateY(-3px);
 }
 .about-page .about-review-panel
@@ -4732,13 +4732,13 @@ CONTACT — WIDE CONTRAST BANNER
 }
 .about-page .about-contact-button
 {
-  color: var(--wine-dark);
-  background: #fff7f3;
+  color: #101010;
+  background: var(--accent-yellow) ;
 }
 .about-page .about-contact-button:hover
 {
-  color: var(--wine-dark);
-  background: white;
+  color: white;
+  background: rgb(21, 21, 21);
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(28, 9, 18, 0.18);
 }
@@ -5276,8 +5276,8 @@ HERO BANNER
   gap: 22px;
   min-height: 56px;
   padding: 0 24px;
-  color: #fff !important;
-  background: var(--wn-burgundy);
+  color: #0a0a0a !important;
+  background: var(--accent-yellow);
   border: 1px solid var(--wn-burgundy);
   border-radius: 5px;
   box-shadow: 0 10px 25px rgba(118, 39, 70, 0.13);
@@ -5291,6 +5291,7 @@ HERO BANNER
   background: var(--wn-burgundy-dark);
   box-shadow: 0 14px 30px rgba(118, 39, 70, 0.23);
   transform: translateY(-4px);
+  color: white !important;
 }
 .wn-stitch-primary-btn i, .wn-stitch-text-link i
 {
@@ -6861,8 +6862,8 @@ Premium cream, blush, burgundy & gold
   gap: 20px;
   min-height: 57px;
   padding: 0 24px;
-  color: #fff !important;
-  background: var(--dm-burgundy);
+  color: black !important;
+  background: var(--accent-yellow);
   border: 1px solid var(--dm-burgundy);
   border-radius: 5px;
   box-shadow: 0 10px 25px rgba(118, 39, 70, 0.14);
@@ -6876,6 +6877,7 @@ Premium cream, blush, burgundy & gold
   border-color: var(--dm-dark);
   box-shadow: 0 14px 28px rgba(118, 39, 70, 0.23);
   transform: translateY(-4px);
+  color: white !important;
 }
 .materials-primary-btn:hover i
 {
@@ -7529,8 +7531,8 @@ Premium cream, blush, burgundy & gold
   min-height: 53px;
   margin-top: 8px;
   padding: 13px 20px;
-  color: #fff;
-  background: var(--dm-burgundy);
+  color: black;
+  background: var(--accent-yellow);
   border: 1px solid var(--dm-burgundy);
   border-radius: 8px;
   font-size: 13px;
@@ -7543,6 +7545,7 @@ Premium cream, blush, burgundy & gold
   background: var(--dm-dark);
   box-shadow: 0 12px 25px rgba(118, 39, 70, 0.2);
   transform: translateY(-3px);
+  color: white !important;
 }
 .materials-submit-btn i
 {
@@ -8006,8 +8009,8 @@ Cream | Blush | Burgundy | Gold
   gap: 20px;
   min-height: 57px;
   padding: 0 23px;
-  color: #fff !important;
-  background: var(--skin-wine);
+  color: black !important;
+  background: var(--accent-yellow);
   border: 1px solid var(--skin-wine);
   border-radius: 5px;
   box-shadow: 0 10px 25px rgba(118, 39, 70, 0.14);
@@ -12573,9 +12576,9 @@ Burgundy | Blush | Cream | Gold
 .showcase-image-frame
 {
   position: relative;
-  height: clamp(340px, 36vw, 440px);
+  height: clamp(640px, 36vw, 440px);
   overflow: hidden;
-  border-radius: 46% 46% 5px 5px;
+  /* border-radius: 46% 46% 5px 5px; */
   background: #ead5da;
   box-shadow: 14px 17px 0 rgba(118, 39, 70, 0.09);
 }
@@ -14950,8 +14953,8 @@ Uses the About page structure
   padding: 15px 24px;
   border: 1px solid var(--stitch-wine);
   border-radius: 3px;
-  background: var(--stitch-wine);
-  color: #fff;
+  background: var(--accent-yellow);
+  color:black;
   font-size: 13px;
   font-weight: 700;
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
@@ -15521,8 +15524,8 @@ ENQUIRY FORM SECTION
   padding: 15px 23px;
   border: 1px solid var(--stitch-wine);
   border-radius: 4px;
-  background: var(--stitch-wine);
-  color: #fff;
+  background: var(--accent-yellow);
+  color: black;
   font-size: 12px;
   font-weight: 800;
   transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
@@ -15532,6 +15535,7 @@ ENQUIRY FORM SECTION
   transform: translateY(-2px);
   background: var(--stitch-wine-dark);
   box-shadow: 0 8px 20px rgba(75, 30, 39, 0.15);
+  color: white;
 }
 .stitching-page .stitch-submit-btn:focus-visible, .stitching-page .stitch-service-link:focus-visible, .stitching-page .stitch-about-hero a:focus-visible
 {
@@ -16013,7 +16017,7 @@ CONTACT INFORMATION CARDS
   min-height: 270px;
   padding: 28px 23px;
   border: 1px solid var(--wn-contact-border);
-  border-radius: 5px;
+  border-radius: 35px;
   background: var(--accent-lemon) !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -16271,8 +16275,8 @@ CONTACT FORM SECTION
   padding: 14px 24px;
   border: 1px solid var(--wn-contact-wine);
   border-radius: 4px;
-  background: var(--wn-contact-wine);
-  color: #fff;
+  background: var(--accent-yellow);
+  color: black;
   font-size: 12px;
   font-weight: 800;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -16281,6 +16285,7 @@ CONTACT FORM SECTION
 {
   transform: translateY(-2px);
   background: var(--wn-contact-dark);
+  color: white !important;
 }
 .wn-stitching-page .wn-contact-success
 {
@@ -16388,8 +16393,8 @@ LOCATION / GOOGLE MAP
   padding: 13px 18px;
   border: 1px solid var(--wn-contact-wine);
   border-radius: 4px;
-  background: var(--wn-contact-wine);
-  color: #fff;
+  background: var(--accent-yellow);
+  color: black;
   font-size: 11px;
   font-weight: 800;
   text-decoration: none;

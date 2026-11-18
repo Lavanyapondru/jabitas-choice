@@ -18,8 +18,7 @@ const slides = [
       "Explore sarees, ethnic wear, western outfits, nightwear and kids' clothing.",
     icon: "bi-person-standing-dress",
     tag: "THE CLOTHING EDIT",
-    image:
-      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85",
+    image:"slide1.png",
     alt: "Traditional Indian fashion collection",
     button: "Explore Clothing",
     path: "/clothing",
@@ -34,7 +33,7 @@ const slides = [
     icon: "bi-scissors",
     tag: "CUSTOM STITCHING",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk0TkpzXyle3olzeeEKBBDofDYJX2vXV6giaRPhFeWgw&s",
+      "slide2.png",
     // alt: "Tailoring and garment craftsmanship",
     button: "Explore Stitching",
     path: "/stitching",
@@ -49,56 +48,56 @@ const slides = [
     icon: "bi-palette",
     tag: "THE FABRIC STUDIO",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTscBRcMcn4OX1lxloRwnitai60uHSBS-703kegNrtq2Q&s=10",
+      "slide3.png",
     alt: "Textiles and fabric inspiration",
     button: "Explore Materials",
     path: "/dress-materials",
   },
-  {
-    number: "04",
-    eyebrow: "A LITTLE SELF-CARE",
-    title: "Make time for yourself.",
-    highlight: "Your everyday glow.",
-    description:
-      "Discover skincare and self-care essentials for a feel-good everyday routine.",
-    icon: "bi-stars",
-    tag: "THE SELF-CARE EDIT",
-    image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85",
-    alt: "Skincare and beauty products",
-    button: "Explore Skincare",
-    path: "/skincare",
-  },
-  {
-    number: "05",
-    eyebrow: "COMFORT AND CONFIDENCE",
-    title: "Comfort in every moment.",
-    highlight: "Feel good in your own way.",
-    description:
-      "Find innerwear essentials, lingerie sets, camisoles and everyday comfort.",
-    icon: "bi-heart",
-    tag: "THE COMFORT EDIT",
-    image:
-      "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?auto=format&fit=crop&w=1000&q=85",
-    alt: "Women's wardrobe and fashion essentials",
-    button: "Explore Innerwear",
-    path: "/innerwear",
-  },
-  {
-    number: "06",
-    eyebrow: "THE FINISHING TOUCH",
-    title: "Small details. Big style.",
-    highlight: "Find your favourites.",
-    description:
-      "Shop footwear, handbags, watches, beauty products and everyday accessories.",
-    icon: "bi-handbag",
-    tag: "THE ACCESSORIES EDIT",
-    image:
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
-    alt: "Handbag and fashion accessories",
-    button: "Explore Women's Products",
-    path: "/women-products",
-  },
+  // {
+  //   number: "04",
+  //   eyebrow: "A LITTLE SELF-CARE",
+  //   title: "Make time for yourself.",
+  //   highlight: "Your everyday glow.",
+  //   description:
+  //     "Discover skincare and self-care essentials for a feel-good everyday routine.",
+  //   icon: "bi-stars",
+  //   tag: "THE SELF-CARE EDIT",
+  //   image:
+  //     "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85",
+  //   alt: "Skincare and beauty products",
+  //   button: "Explore Skincare",
+  //   path: "/skincare",
+  // },
+  // {
+  //   number: "05",
+  //   eyebrow: "COMFORT AND CONFIDENCE",
+  //   title: "Comfort in every moment.",
+  //   highlight: "Feel good in your own way.",
+  //   description:
+  //     "Find innerwear essentials, lingerie sets, camisoles and everyday comfort.",
+  //   icon: "bi-heart",
+  //   tag: "THE COMFORT EDIT",
+  //   image:
+  //     "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?auto=format&fit=crop&w=1000&q=85",
+  //   alt: "Women's wardrobe and fashion essentials",
+  //   button: "Explore Innerwear",
+  //   path: "/innerwear",
+  // },
+  // {
+  //   number: "06",
+  //   eyebrow: "THE FINISHING TOUCH",
+  //   title: "Small details. Big style.",
+  //   highlight: "Find your favourites.",
+  //   description:
+  //     "Shop footwear, handbags, watches, beauty products and everyday accessories.",
+  //   icon: "bi-handbag",
+  //   tag: "THE ACCESSORIES EDIT",
+  //   image:
+  //     "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+  //   alt: "Handbag and fashion accessories",
+  //   button: "Explore Women's Products",
+  //   path: "/women-products",
+  // },
 ];
 
 function HomeSlider() {
@@ -130,9 +129,9 @@ function HomeSlider() {
           <span>
             <i className="bi bi-stars" /> WELCOME TO WOMEN NEEDS
           </span>
-          <span className="showcase-counter">
+          {/* <span className="showcase-counter">
             {slide.number} <span>/ 06</span>
-          </span>
+          </span> */}
         </div>
 
         <div className="showcase-layout" key={slide.number}>
@@ -255,8 +254,34 @@ function HomeSlider() {
 
 export default function Home() {
   const { products } = useShop();
-  const visibleProducts = products.filter((p) => p.isActive !== false);
+const activeProducts = products.filter(
+  (p) => p.isActive !== false
+);
 
+const sareeProducts = activeProducts.filter(
+  (p) =>
+    String(p.subcategory || "")
+      .toLowerCase()
+      .trim() === "sarees"
+);
+
+// Sort newest products first
+const visibleProducts = [...sareeProducts].sort((a, b) => {
+  const dateA = new Date(
+    a.updatedAt || a.createdAt || 0
+  ).getTime();
+
+  const dateB = new Date(
+    b.updatedAt || b.createdAt || 0
+  ).getTime();
+
+  return dateB - dateA;
+});
+
+console.log("Total products:", products.length);
+console.log("Active products:", activeProducts.length);
+console.log("Saree products:", sareeProducts.length);
+console.log("Final visible products:", visibleProducts);
   return (
     <>
       {/* Automatic 6-slide collection banner */}
@@ -314,12 +339,12 @@ export default function Home() {
           />
 
           <div className="row g-4">
-            {visibleProducts.slice(0, 4).map((product) => (
-              <div className="col-6 col-lg-3" key={product.id}>
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+  {visibleProducts.map((product) => (
+    <div className="col-6 col-lg-3" key={product.id}>
+      <ProductCard product={product} />
+    </div>
+  ))}
+</div>
 
           <div className="text-center mt-5">
             <Link to="/shop" className="btn btn-outline-brand">
@@ -335,7 +360,7 @@ export default function Home() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <img
-                src={gallery[3]}
+                src="cta.png"
                 alt="Women Needs collection"
                 loading="lazy"
               />
