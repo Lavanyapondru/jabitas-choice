@@ -225,18 +225,18 @@ export const products = [
   mrp: "₹4,999",
   offer: "50% OFF",
   badge: "Bestseller",
-  image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80"
+  image: "https://jabitaschoice.com/cdn/shop/files/1001891804_1800x1800.jpg?v=1794927792"
 },
 {
   id: 54,
   category: "clothing",
   subcategory: "sarees",
-  name: "Soft Cotton Handloom Saree",
+  name: "Soft Cotton Handloom Saree2",
   price: "₹1,299",
   mrp: "₹2,499",
   offer: "48% OFF",
   badge: "Popular",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKCCtMwrozYzQA3NINHeGQWsTIlBW9KMjShPecADXqJA&s=10"
+  image: "https://jabitaschoice.com/cdn/shop/files/1001891804_1800x1800.jpg?v=1794927792"
 },
 {
   id: 55,
