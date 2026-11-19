@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavLink,
   Link,
@@ -28,6 +28,16 @@ const categories = [
   ["innerwear", "Inner Wear"],
   ["skincare", "Skincare"],
   ["dress-materials", "Dress Materials"],
+];
+
+const customizationOptions = [
+  { slug: "mom-daughter", label: "Mom & Daughter", icon: "bi-hearts" },
+  { slug: "anniversary", label: "Anniversary Special", icon: "bi-gift" },
+  { slug: "haldi", label: "Haldi Ceremony", icon: "bi-brightness-high" },
+  { slug: "sangeeth", label: "Sangeeth Collection", icon: "bi-music-note-beamed" },
+  { slug: "wedding", label: "Wedding Collection", icon: "bi-stars" },
+  { slug: "birthday", label: "Birthday Special", icon: "bi-balloon-heart" },
+  { slug: "sreemantham", label: "Sreemantham Collection", icon: "bi-flower1" },
 ];
 
 const prices = [
@@ -67,6 +77,8 @@ export default function Navbar() {
     params.get("price") || "all"
   );
 
+  const [customizationOpen, setCustomizationOpen] = useState(false);
+
   // Keep search fields synchronized with URL changes.
   useEffect(() => {
     const currentParams = new URLSearchParams(location.search);
@@ -74,9 +86,11 @@ export default function Navbar() {
     setSearch(currentParams.get("search") || "");
     setCategory(currentParams.get("category") || "all");
     setPrice(currentParams.get("price") || "all");
+    setCustomizationOpen(false);
   }, [location.search, location.pathname]);
 
   const closeMobileMenu = () => {
+    setCustomizationOpen(false);
     const nav = document.getElementById("nav");
 
     if (nav?.classList.contains("show")) {
@@ -432,18 +446,66 @@ export default function Navbar() {
 
         <ul className="navbar-nav lvs-nav-links">
           {links.map(([to, label]) => (
-            <li className="nav-item" key={to}>
-              <NavLink
-                to={to}
-                end={to === "/"}
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                onClick={closeMobileMenu}
-              >
-                {label}
-              </NavLink>
-            </li>
+            <React.Fragment key={to}>
+              <li className="nav-item">
+                <NavLink
+                  to={to}
+                  end={to === "/"}
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  {label}
+                </NavLink>
+              </li>
+
+              {label === "About Us" && (
+                <li className="nav-item lvs-customization-item">
+                  <button
+                    type="button"
+                    className={`nav-link lvs-customization-trigger ${
+                      customizationOpen ? "is-open" : ""
+                    }`}
+                    onClick={() => setCustomizationOpen((open) => !open)}
+                    aria-expanded={customizationOpen}
+                    aria-haspopup="true"
+                  >
+                    Customization
+                    <i className={`bi bi-chevron-down lvs-customization-chevron ${
+                      customizationOpen ? "is-open" : ""
+                    }`} />
+                  </button>
+
+                  {customizationOpen && (
+                    <div className="lvs-customization-dropdown">
+                      <div className="lvs-customization-dropdown-heading">
+                        <span>MADE FOR YOUR MOMENTS</span>
+                        <strong>Choose an occasion</strong>
+                      </div>
+
+                      {customizationOptions.map((option) => (
+                        <Link
+                          key={option.slug}
+                          to={`/customization/${option.slug}`}
+                          className="lvs-customization-option"
+                          onClick={() => {
+                            setCustomizationOpen(false);
+                            closeMobileMenu();
+                          }}
+                        >
+                          <span className="lvs-customization-option-icon">
+                            <i className={`bi ${option.icon}`} />
+                          </span>
+                          <span>{option.label}</span>
+                          <i className="bi bi-arrow-up-right lvs-customization-option-arrow" />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              )}
+            </React.Fragment>
           ))}
         </ul>
 

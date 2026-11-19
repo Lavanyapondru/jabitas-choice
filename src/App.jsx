@@ -16,6 +16,7 @@ import Stitching from "./pages/Stitching";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import CustomizationComingSoon from "./pages/CustomizationComingSoon";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 
 import CartDrawer from "./components/CartDrawer";
@@ -60,6 +61,7 @@ function Layout() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/customization/:occasion" element={<CustomizationComingSoon />} />
 
           {/* Admin Dashboard & Management Routes */}
           <Route path="/admin" element={<AdminDashboard />} />

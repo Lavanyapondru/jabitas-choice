@@ -2588,7 +2588,7 @@ LAXMI VARA SILKS - PROFESSIONAL NAVBAR
 {
   body
   {
-    padding-top: 190px;
+    padding-top: 0px;
   }
 }
 .modal-img-wrap
@@ -18425,5 +18425,509 @@ RESPONSIVE IMAGE SIZING
   .sale-content strong,
   .sale-arrow {
     animation: none !important;
+  }
+}
+
+/* =========================================================
+   CUSTOMIZATION NAVIGATION + COMING SOON PAGE
+   All selectors are namespaced to protect the existing navbar.
+========================================================= */
+
+.lvs-customization-item {
+  position: relative;
+}
+
+.site-nav .lvs-customization-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  font: inherit;
+}
+
+.site-nav .lvs-customization-trigger:hover,
+.site-nav .lvs-customization-trigger.is-open {
+  color: #efef52 !important;
+}
+
+.lvs-customization-chevron {
+  font-size: 10px;
+  transition: transform .25s ease;
+}
+
+.lvs-customization-chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.lvs-customization-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 1500;
+  width: 290px;
+  padding: 12px;
+  border: 1px solid rgba(239, 239, 82, .35);
+  border-radius: 16px;
+  background: #2e2027;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .28);
+  animation: lvsCustomizationDrop .22s ease both;
+}
+
+.lvs-customization-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 24px;
+  width: 13px;
+  height: 13px;
+  background: #2e2027;
+  border-top: 1px solid rgba(239, 239, 82, .35);
+  border-left: 1px solid rgba(239, 239, 82, .35);
+  transform: rotate(45deg);
+}
+
+.lvs-customization-dropdown-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 9px 11px 12px;
+  border-bottom: 1px solid rgba(255, 255, 230, .14);
+  margin-bottom: 7px;
+}
+
+.lvs-customization-dropdown-heading span {
+  color: #efef52;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.lvs-customization-dropdown-heading strong {
+  color: #ffffe6;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.lvs-customization-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #ffffe6 !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .22s ease, color .22s ease, transform .22s ease;
+}
+
+.lvs-customization-option:hover {
+  color: #111111 !important;
+  background: #efef52;
+  transform: translateX(4px);
+}
+
+.lvs-customization-option-icon {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #efef52;
+  background: rgba(239, 239, 82, .12);
+  font-size: 14px;
+  transition: inherit;
+}
+
+.lvs-customization-option:hover .lvs-customization-option-icon {
+  color: #111111;
+  background: rgba(17, 17, 17, .09);
+}
+
+.lvs-customization-option-arrow {
+  margin-left: auto;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: .22s ease;
+}
+
+.lvs-customization-option:hover .lvs-customization-option-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes lvsCustomizationDrop {
+  from { opacity: 0; transform: translateY(9px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Occasion page */
+.lvs-custom-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  padding: 54px 18px 64px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(239, 239, 82, .22), transparent 24%),
+    radial-gradient(circle at 88% 82%, rgba(239, 239, 82, .16), transparent 25%),
+    #ffffe6;
+}
+
+.lvs-custom-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.lvs-custom-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: #77776b;
+  font-size: 12px;
+}
+
+.lvs-custom-breadcrumb a {
+  color: #5f5f4e;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.lvs-custom-breadcrumb a:hover,
+.lvs-custom-breadcrumb strong {
+  color: #111111;
+}
+
+.lvs-custom-breadcrumb i {
+  color: #b1b18c;
+  font-size: 9px;
+}
+
+.lvs-custom-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 780px;
+  min-height: 510px;
+  margin: 0 auto;
+  padding: 42px 34px;
+  border: 1px solid rgba(17, 17, 17, .1);
+  border-radius: 28px;
+  background: #2e2027;
+  color: #ffffe6;
+  text-align: center;
+  box-shadow: 0 24px 65px rgba(17, 17, 17, .16);
+  animation: lvsCustomCardEnter .7s cubic-bezier(.2,.75,.25,1) both;
+}
+
+.lvs-custom-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10px;
+  border: 1px solid rgba(239, 239, 82, .2);
+  border-radius: 21px;
+  pointer-events: none;
+}
+
+.lvs-custom-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.lvs-custom-kicker {
+  color: #efef52;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lvs-custom-number {
+  color: rgba(255, 255, 230, .55);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.lvs-custom-icon-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  margin: 44px auto 22px;
+  border: 1px solid rgba(239, 239, 82, .6);
+  border-radius: 26px;
+  background: rgba(239, 239, 82, .1);
+  color: #efef52;
+  font-size: 38px;
+  box-shadow: 0 0 0 9px rgba(239, 239, 82, .045);
+  animation: lvsCustomIconFloat 3s ease-in-out infinite;
+}
+
+.lvs-custom-coming-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #efef52;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lvs-custom-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #efef52;
+  box-shadow: 0 0 0 5px rgba(239, 239, 82, .12);
+  animation: lvsCustomPulse 1.6s ease-in-out infinite;
+}
+
+.lvs-custom-card h1 {
+  margin: 15px 0 8px;
+  color: #ffffe6;
+  font: 600 clamp(2.1rem, 5vw, 3.6rem)/1.12 "Playfair Display", serif;
+}
+
+.lvs-custom-card h2 {
+  margin: 0 0 13px;
+  color: #efef52;
+  font: 500 clamp(1rem, 2.5vw, 1.25rem) "Playfair Display", serif;
+}
+
+.lvs-custom-card > p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: rgba(255, 255, 230, .72);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.lvs-custom-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 27px auto 12px;
+  color: #efef52;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.lvs-custom-status-line {
+  width: 45px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #efef52);
+}
+
+.lvs-custom-status-line:last-child {
+  transform: rotate(180deg);
+}
+
+.lvs-custom-card > .lvs-custom-note {
+  color: rgba(255, 255, 230, .52);
+  font-size: 11px;
+}
+
+.lvs-custom-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 25px;
+  padding: 12px 21px;
+  border: 1px solid #efef52;
+  border-radius: 999px;
+  background: #efef52;
+  color: #111111 !important;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.lvs-custom-home-link:hover {
+  transform: translateY(-4px);
+  background: #ffffe6;
+  box-shadow: 0 10px 25px rgba(239, 239, 82, .2);
+}
+
+.lvs-custom-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(239, 239, 82, .12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.lvs-custom-orbit-one {
+  top: -135px;
+  right: -90px;
+}
+
+.lvs-custom-orbit-two {
+  bottom: -150px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
+}
+
+.lvs-custom-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: #5c5c4e;
+  font: italic 14px "Playfair Display", serif;
+  text-align: center;
+}
+
+.lvs-custom-footer-note i {
+  color: #99992d;
+  font-size: 12px;
+}
+
+.lvs-custom-not-found {
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lvs-custom-not-found h1 {
+  font-size: 2.2rem;
+}
+
+.lvs-custom-not-found p {
+  margin-top: 8px;
+}
+
+@keyframes lvsCustomCardEnter {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes lvsCustomIconFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@keyframes lvsCustomPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(239, 239, 82, .1); }
+  50% { box-shadow: 0 0 0 8px rgba(239, 239, 82, .02); }
+}
+
+@media (max-width: 991px) {
+  .lvs-customization-item {
+    width: 100%;
+  }
+
+  .site-nav .lvs-customization-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 13px 8px !important;
+    text-align: left;
+  }
+
+  .lvs-customization-dropdown {
+    position: static;
+    width: 100%;
+    margin: 0 0 12px;
+    border-radius: 12px;
+    box-shadow: none;
+    animation: lvsCustomizationDrop .2s ease both;
+  }
+
+  .lvs-customization-dropdown::before {
+    display: none;
+  }
+
+  .lvs-customization-option {
+    padding: 11px;
+  }
+}
+
+@media (max-width: 575px) {
+  .lvs-custom-page {
+    min-height: 560px;
+    padding: 34px 13px 45px;
+  }
+
+  .lvs-custom-card {
+    min-height: 470px;
+    padding: 30px 20px;
+    border-radius: 22px;
+  }
+
+  .lvs-custom-card::before {
+    inset: 7px;
+    border-radius: 16px;
+  }
+
+  .lvs-custom-card-top {
+    align-items: flex-start;
+  }
+
+  .lvs-custom-kicker {
+    max-width: 190px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  .lvs-custom-icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin-top: 38px;
+    font-size: 31px;
+  }
+
+  .lvs-custom-coming-label {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .lvs-custom-status {
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .lvs-custom-status-line {
+    width: 25px;
+  }
+
+  .lvs-custom-footer-note {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lvs-customization-dropdown,
+  .lvs-custom-card,
+  .lvs-custom-icon-wrap,
+  .lvs-custom-live-dot {
+    animation: none !important;
+  }
+
+  .lvs-customization-option,
+  .lvs-custom-home-link {
+    transition: none !important;
   }
 }
