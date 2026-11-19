@@ -76,13 +76,13 @@ export default function CustomizationComingSoon() {
   return (
     <main className="lvs-custom-page">
       <section className="lvs-custom-shell">
-        <div className="lvs-custom-breadcrumb">
+        {/* <div className="lvs-custom-breadcrumb">
           <Link to="/">Home</Link>
           <i className="bi bi-chevron-right" />
           <span>Customization</span>
           <i className="bi bi-chevron-right" />
           <strong>{item.title}</strong>
-        </div>
+        </div> */}
 
         <div className="lvs-custom-card">
           <span className="lvs-custom-orbit lvs-custom-orbit-one" />
